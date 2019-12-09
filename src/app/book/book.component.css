@@ -1,9 +1,9 @@
-/* BookComponent's private CSS styles */
+/* BookComponent's private CSS styles *//*
 .books {
     margin: 0 0 2em 0;
     list-style-type: none;
-    padding: 0;
-    /*width: 15em;*/
+    padding: 0;*/
+    /*width: 15em;*//*
   }
   .books li {
     cursor: pointer;
@@ -42,3 +42,7 @@
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
+*/
+  /* CUSTOM STYLES */
+
+
