@@ -71,6 +71,20 @@ h1 {
  /* CUSTOM STYLES*/
  /*@import url(../node_modules/@ng-bootstrap/ng-bootstrap/);*/
   /* :: 3.0 Base CSS */
+
+  .logo {
+    padding-left: -40px;
+  }
+
+  .single-products-catagory img {
+    height: 300px;
+    opacity: 90%;
+  }
+
+  .single-products-catagory .hover-content {
+    padding: 20px;
+  }
+
 * {
   margin: 0;
   padding: 0; }
@@ -991,11 +1005,6 @@ img {
 .search-wrapper-on .main-content-wrapper {
   margin-top: 260px; }
 
-.single-products-catagory img {
-  height: 300px;
-  opacity: 30%;
-}
-
 .single-products-catagory {
   position: relative;
   z-index: 1;
@@ -1064,10 +1073,11 @@ img {
   .single-products-catagory:hover a::after, .single-products-catagory:focus a::after {
     opacity: 1;
     visibility: visible; }
+    /*
   .single-products-catagory:hover .hover-content p,
   .single-products-catagory:hover .hover-content h4, .single-products-catagory:focus .hover-content p,
   .single-products-catagory:focus .hover-content h4 {
-    color: #fff; }
+    color: #fff; }*/
 
 /* :: 6.0 Newsletter Area CSS */
 .newsletter-area {
@@ -1213,7 +1223,7 @@ img {
   position: relative;
   z-index: 1;
   background-color: #252525;
-  padding: 80px 0; }
+  padding: 20px 0; }
   .footer_area .single_widget_area .copywrite {
     font-size: 12px;
     color: rgba(255, 255, 255, 0.4);
