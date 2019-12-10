@@ -11,16 +11,6 @@ export class BookListComponent implements OnInit {
 
   books: Book[];
 
-  book: Book = {
-    id: 1,
-    name: 'Windstorm'
-  };
-
-  selectedBook: Book;
-  onSelect(book: Book): void {
-    this.selectedBook = book;
-  }
-
   getBooks(): void {
     this.bookService.getBooks().subscribe(books => this.books = books);
   }

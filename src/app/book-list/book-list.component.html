@@ -1,35 +1,3 @@
-<!--
-<ul class="books">
-    <li *ngFor="let book of books" 
-        [class.selected]="book === selectedBook"
-        (click)="onSelect(book)">
-        <span class="badge">{{book.id}}</span> {{book.name}}
-    </li>
-</ul>
--->
-
-<app-book-detail [book]="selectedBook"></app-book-detail>
-
-<!-- Search Wrapper Area Start -->
-<div class="search-wrapper section-padding-100">
-    <div class="search-close">
-        <i class="fa fa-close" aria-hidden="true"></i>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="search-content">
-                    <form action="#" method="get">
-                        <input type="search" name="search" id="search" placeholder="Type your keyword...">
-                        <button type="submit"><img src="assets/img/core-img/search.png" alt=""></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Search Wrapper Area End -->
-
 <!-- ##### Main Content Wrapper Start ##### -->
 <div class="main-content-wrapper d-flex clearfix">
 
@@ -58,9 +26,7 @@
         <!-- Amado Nav -->
         <nav class="amado-nav">
             <ul>
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="product-details.html">Product</a></li>
+                <li class="active"><a href="index.html">Books</a></li>
                 <li><a href="cart.html">Cart</a></li>
                 <li><a href="checkout.html">Checkout</a></li>
             </ul>
@@ -92,7 +58,7 @@
 
             <!-- Single Catagory -->
             <div *ngFor="let book of books" class="single-products-catagory clearfix">
-                <a href="shop.html">
+                <a routerLink="detail/{{book.id}}">
                     <img src="assets/img/book-img/allatra-book.png" alt="">
                     <!-- Hover Content -->
                     <div class="hover-content bg-white">
@@ -154,13 +120,7 @@
                             <div class="collapse navbar-collapse" id="footerNavContent">
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="index.html">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="shop.html">Shop</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="product-details.html">Product</a>
+                                        <a class="nav-link" routerLink="">Books</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="cart.html">Cart</a>
