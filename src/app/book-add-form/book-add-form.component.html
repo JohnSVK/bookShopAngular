@@ -5,7 +5,7 @@
     <div class="mobile-nav">
         <!-- Navbar Brand -->
         <div class="amado-navbar-brand">
-            <a href="index.html"><img src="assets/img/book-img/logo.png" alt=""></a>
+            <a href="index.html"><img src="assets/img/book-img/bookstore-logo.png" alt=""></a>
         </div>
         <!-- Navbar Toggler -->
         <div class="amado-navbar-toggler">
@@ -26,8 +26,8 @@
         <!-- Amado Nav -->
         <nav class="amado-nav">
             <ul>
-                <li class="active"><a routerLink="">Books</a></li>
-                <li><a routerLink="/books/form">Add Book</a></li>
+                <li><a routerLink="">Books</a></li>
+                <li class="active"><a routerLink="/books/form">Add Book</a></li>
                 <li><a href="cart.html">Cart</a></li>
                 <li><a href="checkout.html">Checkout</a></li>
             </ul>
@@ -53,25 +53,61 @@
     </header>
     <!-- Header Area End -->
 
-    <!-- Product Catagories Area Start -->
-    <div class="products-catagories-area clearfix">
-        <div class="amado-pro-catagory clearfix">
+    <div class="cart-table-area section-padding-100">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="checkout_details_area mt-50 clearfix">
 
-            <!-- Single Catagory -->
-            <div *ngFor="let book of books" class="single-products-catagory clearfix">
-                <a routerLink="detail/{{book.id}}">
-                    <img src="assets/img/book-img/allatra-book.png" alt="">
-                    <!-- Hover Content -->
-                    <div class="hover-content bg-white">
-                        <h4>{{book.name}}</h4>
-                        <div class="line"></div>
-                        <p>From $180</p>
+                        <div class="cart-title">
+                            <h2>Add new book</h2>
+                        </div>
+
+                        <form [formGroup]="bookForm" (ngSubmit)="onSubmit()" action="#" method="post">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" formControlName="bookName" id="book_name" value="" placeholder="Book name" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <input type="text" class="form-control" formControlName="bookCategory" id="category_name" value="" placeholder="Book category">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <input type="text" class="form-control" formControlName="bookType" id="type_name" value="" placeholder="Book type">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <textarea name="description" class="form-control w-100" formControlName="bookDescription" id="book_description" cols="30" rows="10" placeholder="Book description"></textarea>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <input type="text" class="form-control" formControlName="authorName" id="author_name" placeholder="Author name" value="">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <input type="text" class="form-control" formControlName="authorSurname" id="author_surname" placeholder="Author surname" value="">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <span>Author country:</span>
+                                    <select class="w-100" id="author_country">
+                                    <option value="usa">United States</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="ger">Germany</option>
+                                    <option value="fra">France</option>
+                                    <option value="ind">India</option>
+                                    <option value="aus">Australia</option>
+                                    <option value="bra">Brazil</option>
+                                    <option value="cana">Canada</option>
+                                    </select>
+                                </div>
+                                <div class="cart-btn col-12 mb-3 mt-100">
+                                    <button type="submit" [disabled]="!bookForm.valid" class="amado-btn">Save</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </a>
+                </div>
+                <div class="col-12 col-lg-4">
+                </div>
             </div>
         </div>
     </div>
-    <!-- Product Catagories Area End -->
 </div>
 <!-- ##### Main Content Wrapper End ##### -->
 
@@ -108,7 +144,9 @@
             <div class="col-12 col-lg-4">
                 <div class="single_widget_area">
                     <!-- Copywrite Text -->
-                    <p class="copywrite">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made by Ján Kanás</p>
+                    <p class="copywrite"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
             </div>
             <!-- Single Widget Area -->
@@ -121,7 +159,13 @@
                             <div class="collapse navbar-collapse" id="footerNavContent">
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item active">
-                                        <a class="nav-link" routerLink="">Books</a>
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="shop.html">Shop</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="product-details.html">Product</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="cart.html">Cart</a>

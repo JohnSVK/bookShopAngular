@@ -11,6 +11,7 @@ export class BookService {
 
   private booksUrl = 'http://localhost:8080/books';
   private bookByIdUrl = 'http://localhost:8080/books/';
+  private saveBookUrl = 'http://localhost:8080/books/';
 
   getBooks(): Observable<Book[]> {
     // return of(BOOKS);
@@ -19,6 +20,12 @@ export class BookService {
 
   getBookById(id: number): Observable<Book> {
     return this.http.get<Book>(this.bookByIdUrl + id);
+  }
+
+  saveBook(book: string): void {
+    console.log('saveBook', book);
+    const savedBook = this.http.post<Book>(this.saveBookUrl, book);
+    savedBook.subscribe(newBook => console.log('saveBook SAVED', newBook));
   }
 
   constructor(
