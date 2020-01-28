@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Book } from '../book';
+import { Book } from '../model/book';
 import { BookService } from '../book.service';
 
 @Component({
@@ -25,6 +25,7 @@ export class BookDetailComponent implements OnInit {
   }
 
   getBook(): void {
+    console.log('getBook');
     const id = +this.route.snapshot.paramMap.get('id');
     this.bookService.getBookById(id).subscribe(book => this.book = book);
   }

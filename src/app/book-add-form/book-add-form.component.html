@@ -69,33 +69,27 @@
                                     <input type="text" class="form-control" formControlName="bookName" id="book_name" value="" placeholder="Book name" required>
                                 </div>
                                 <div class="col-12 mb-3">
-                                    <input type="text" class="form-control" formControlName="bookCategory" id="category_name" value="" placeholder="Book category">
-                                </div>
-                                <div class="col-12 mb-3">
-                                    <input type="text" class="form-control" formControlName="bookType" id="type_name" value="" placeholder="Book type">
-                                </div>
-                                <div class="col-12 mb-3">
                                     <textarea name="description" class="form-control w-100" formControlName="bookDescription" id="book_description" cols="30" rows="10" placeholder="Book description"></textarea>
                                 </div>
                                 <div class="col-12 mb-3">
-                                    <input type="text" class="form-control" formControlName="authorName" id="author_name" placeholder="Author name" value="">
-                                </div>
-                                <div class="col-12 mb-3">
-                                    <input type="text" class="form-control" formControlName="authorSurname" id="author_surname" placeholder="Author surname" value="">
-                                </div>
-                                <div class="col-12 mb-3">
-                                    <span>Author country:</span>
-                                    <select class="w-100" id="author_country">
-                                    <option value="usa">United States</option>
-                                    <option value="uk">United Kingdom</option>
-                                    <option value="ger">Germany</option>
-                                    <option value="fra">France</option>
-                                    <option value="ind">India</option>
-                                    <option value="aus">Australia</option>
-                                    <option value="bra">Brazil</option>
-                                    <option value="cana">Canada</option>
+                                    <label>Author:</label>
+                                    <select class="w-100" formControlName="bookAuthor" id="author">
+                                        <option *ngFor="let author of authors" [value]="author.id">{{author.name}} {{author.surname}}</option>
                                     </select>
                                 </div>
+                                <div class="col-12 mb-3">
+                                    <label>Category:</label>
+                                    <select class="w-100" formControlName="bookCategory" id="category">
+                                        <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label>Type:</label>
+                                    <select class="w-100" formControlName="bookType" id="type">
+                                        <option *ngFor="let type of types" [value]="type.id">{{type.name}}</option>
+                                    </select>
+                                </div>
+
                                 <div class="cart-btn col-12 mb-3 mt-100">
                                     <button type="submit" [disabled]="!bookForm.valid" class="amado-btn">Save</button>
                                 </div>
