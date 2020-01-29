@@ -73,19 +73,19 @@
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label>Author:</label>
-                                    <select class="w-100" formControlName="bookAuthor" id="author">
+                                    <select class="w-100" formControlName="bookAuthor" id="author" required>
                                         <option *ngFor="let author of authors" [value]="author.id">{{author.name}} {{author.surname}}</option>
                                     </select>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label>Category:</label>
-                                    <select class="w-100" formControlName="bookCategory" id="category">
+                                    <select class="w-100" formControlName="bookCategory" id="category" required>
                                         <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
                                     </select>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label>Type:</label>
-                                    <select class="w-100" formControlName="bookType" id="type">
+                                    <select class="w-100" formControlName="bookType" id="type" required>
                                         <option *ngFor="let type of types" [value]="type.id">{{type.name}}</option>
                                     </select>
                                 </div>

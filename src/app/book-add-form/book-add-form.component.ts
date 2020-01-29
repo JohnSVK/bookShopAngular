@@ -57,7 +57,7 @@ export class BookAddFormComponent implements OnInit {
         }
     };
 
-    // this.bookService.saveBook(this.book);
+    this.bookService.saveBook(this.book);
   }
 
   getTypes(): void {
